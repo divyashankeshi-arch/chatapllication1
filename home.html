@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .message {
+            background: #e6f2ff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 75%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+    <h1>Chat Application</h1>
+
+    <div id="chatBox">
+        <div class="message">Welcome to Chat App!</div>
+    </div>
+
+    <input type="text" id="messageInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("messageInput");
+    let chatBox = document.getElementById("chatBox");
+
+    if (input.value.trim() !== "") {
+        let message = document.createElement("div");
+        message.className = "message";
+        message.innerText = input.value;
+
+        chatBox.appendChild(message);
+        input.value = "";
+    }
+}
+</script>
+
+</body>
+</html>
